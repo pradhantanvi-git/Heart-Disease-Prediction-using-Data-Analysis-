@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/index.css') }}"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+
+    <title>Check Prediction</title>
+  </head>
+  <body>
+    <div class="overlay">
+      <div class="videobg">
+        <video autoplay muted id="vid">
+          <source src={{ url_for('static', filename="bg.mp4") }} type="video/mp4" />
+        </video>
+        <script>
+          document.getElementsByTagName("video")[0].onended = function () {
+            this.load();
+            this.play();
+          };
+        </script>
+        <div class="logout">
+
+          <a href="/logout">Logout</a>
+        
+        </div>
+     
+    </div>
+    <div class="input">
+      <h1>Enter The Medical Information</h1>
+      <div class="formcont">
+        <form class="needs-validation" novalidate action="{{ url_for('predict')}}" method="post"> 
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="Age">Age</label>
+              <input
+                type="text"
+                class="form-control"
+                name="Age"
+                placeholder="Age in years"
+                required="required"
+              />
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="Gender">Gender</label>
+              <input
+                type="text"
+                class="form-control"
+                name="Gender"
+                placeholder="1 = Male, 0 = Female"
+                required
+              />
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="Cp">Chestpain</label>
+              <input
+                type="text"
+                class="form-control"
+                id="Cp"
+                placeholder="Chest Pain Type"
+                name="Cp"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="Trestbps">Trestbps</label>
+              <input
+                type="text"
+                class="form-control"
+                name="Trestbps"
+                placeholder="Resting blood sugar"
+                required
+              />
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="Chol">Chol</label>
+              <input
+                type="text"
+                class="form-control"
+                name="Chol"
+                placeholder="Serum Cholestoral"
+                required
+              />
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="Fbs">Fbs(Fasting Blood Sugar)</label>
+              <input
+                type="text"
+                class="form-control"
+                name="Fbs"
+                placeholder="1 = True , 0 = False"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="Restecg">Restecg</label>
+              <input
+                type="text"
+                class="form-control"
+                name="Restecg"
+                placeholder="Resting electrocardiographic"
+                required
+              />
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="Thalach">Thalach</label>
+              <input
+                type="text"
+                class="form-control"
+                name="Thalach"
+                placeholder="Maximum Heart Rate Achieved"
+                required
+              />
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="Exang">Exang</label>
+              <input
+                type="text"
+                class="form-control"
+                name="Exang"
+                placeholder="1 = Yes , 0 = No"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="Oldpeak">Oldpeak</label>
+              <input
+                type="text"
+                class="form-control"
+                name="Oldpeak"
+                placeholder="ST Depression"
+                required
+              />
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="Slope">Slope</label>
+              <input
+                type="text"
+                class="form-control"
+                name="Slope"
+                placeholder="Slope of Peak Exercise ST"
+                required
+              />
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="Ca">Ca</label>
+              <input
+                type="text"
+                class="form-control"
+                name="Ca"
+                placeholder="No Of Major Vessels(0-3)"
+                required
+              />
+            </div>
+          </div>
+
+       <div class="in">
+          <div class="form-row">
+              <label for="Thal">Thal</label>
+              <input
+                type="text"
+                class="form-control"
+                name="Thal"
+                placeholder="ST Depression"
+                required
+
+              />
+            </div>
+          </div>
+        </div>
+          <div class="btttn">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
+        </form>
+
+        <div class="predtext">
+          <center>
+            <h1>{{ prediction_text }}</h1>
+          </center>
+        </div>
+      </div>
+      
+    </div>
+  </body>
+</html>
