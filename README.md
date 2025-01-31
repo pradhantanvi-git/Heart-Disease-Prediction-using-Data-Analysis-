@@ -38,42 +38,50 @@ The goal is to assist healthcare professionals and individuals in identifying po
 - **Naïve Bayes Classifier**
 - **Support Vector Classifier (SVC)**
 
-How It Works
-User Registration/Login: Users create an account or log in.
-Input Medical Parameters: Enter details such as age, cholesterol, BP, etc.
-Model Prediction: The system runs inputs through ML models to generate results.
-Results Page: Displays prediction result (Heart Disease: Yes/No).
-Consultation Module: Redirects users to online doctor consultation if needed.
+## How It Works
+1. **User Registration/Login**: Users create an account or log in.
+2. **Input Medical Parameters**: Enter details such as age, cholesterol, BP, etc.
+3. **Model Prediction**: The system runs inputs through ML models to generate results.
+4. **Results Page**: Displays prediction result (Heart Disease: Yes/No).
+5. **Consultation Module**: Redirects users to online doctor consultation if needed.
 
-Dataset Description
-The dataset (heart.csv) consists of 14 attributes related to heart health:
-Age
-Sex
-Chest Pain Type (cp)
-Resting Blood Pressure (trestbps)
-Serum Cholesterol (chol)
-Fasting Blood Sugar (fbs)
-Resting ECG (restecg)
-Max Heart Rate Achieved (thalach)
-Exercise Induced Angina (exang)
-ST Depression (oldpeak)
-Slope of Peak Exercise ST Segment (slope)
-Number of Major Vessels (ca)
-Thalassemia (thal)
-Target (1: Disease, 0: No Disease)
+## Dataset Description
+The dataset (`heart.csv`) consists of **14 attributes** related to heart health:
+- **Age**
+- **Sex**
+- **Chest Pain Type (cp)**
+- **Resting Blood Pressure (trestbps)**
+- **Serum Cholesterol (chol)**
+- **Fasting Blood Sugar (fbs)**
+- **Resting ECG (restecg)**
+- **Max Heart Rate Achieved (thalach)**
+- **Exercise Induced Angina (exang)**
+- **ST Depression (oldpeak)**
+- **Slope of Peak Exercise ST Segment (slope)**
+- **Number of Major Vessels (ca)**
+- **Thalassemia (thal)**
+- **Target**: (1 = Disease, 0 = No Disease)
 
-Machine Learning Model Performance
+## Machine Learning Model Performance
 The models have been trained on the dataset to predict heart disease:
-Model	Accuracy
-Decision Tree	~85%
-Logistic Regression	~87%
-Naïve Bayes	~84%
-SVC	~86%
-Future Enhancements
-Implement Deep Learning (Neural Networks) for better accuracy.
-Deploy on Cloud for real-world accessibility.
-Mobile Application for easier usability.
-Smart wearable device integration for real-time monitoring.
-License
-This project is developed for academic purposes and is open-source.
+
+| Model                | Accuracy |
+|----------------------|----------|
+| **Decision Tree**    | ~85%     |
+| **Logistic Regression** | ~87%  |
+| **Naïve Bayes**      | ~84%     |
+| **Support Vector Classifier (SVC)** | ~86% |
+
+## Future Enhancements
+- Implement **Deep Learning (Neural Networks)** for better accuracy.
+- Deploy on **Cloud** for real-world accessibility.
+- Develop a **Mobile Application** for easier usability.
+- **Smart Wearable Device Integration** for real-time monitoring.
+
+## License
+This project is developed for **academic purposes** and is **open-source**.
+
+---
+
+**© 2021 Thakur College of Engineering & Technology**
 
